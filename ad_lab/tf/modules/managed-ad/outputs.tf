@@ -9,3 +9,6 @@ output "ds_managed_ad_ips" {
 output "managed_ad_password_secret_id" {
   value = aws_secretsmanager_secret.mad_admin_secret.id
 }
+
+output ds_managed_ad_secgroup_id {
+  value = aws_directory_service_directory.ds_managed_ad.security_group_id

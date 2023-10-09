@@ -4,7 +4,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.0"
+      version = ">= 4.0"
     }
     random = {
       source  = "hashicorp/random"
@@ -41,8 +41,8 @@ resource "aws_directory_service_directory" "ds_managed_ad" {
   type       = local.ds_managed_ad_type
 
   vpc_settings {
-    vpc_id     = var.ds_managed_ad_vpc_id
-    subnet_ids = var.ds_managed_ad_subnet_ids
+    vpc_id     = local.vpc_id
+    subnet_ids = local.vpc_private_subnets
   }
 }
 
