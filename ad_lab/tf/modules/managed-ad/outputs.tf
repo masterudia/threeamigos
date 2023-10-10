@@ -12,3 +12,5 @@ output "managed_ad_password_secret_id" {
 
 output ds_managed_ad_secgroup_id {
   value = aws_directory_service_directory.ds_managed_ad.security_group_id
+}
+
